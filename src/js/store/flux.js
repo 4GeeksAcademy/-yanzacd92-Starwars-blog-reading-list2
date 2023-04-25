@@ -1,42 +1,34 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			fecthStarWars: async(element, page=1, limit=10) => {
+				let baseURL = `https://www.swapi.tech/api/${element}?page=${page}&limit${limit}`
+				try {
+					let response = await fetch(baseURL)
+					if(!response.ok) return response.status
+					let data = await response.json()
+					let objData = {}
+					objData[element] = data.results
+					setStore(objData)
+				} catch (error) {
+					console.error(error)
+				}
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			getElementByID: async(id) => {
+				let baseURL = `https://www.swapi.tech/api/${element}/${id}`
+				try {
+					let response = await fetch(baseURL)
+					if(!response.ok) return response.status
+					let data = await response.json()
+					let objData = {}
+					objData[element] = data.results
+					setStore(objData)
+				} catch (error) {
+					console.error(error)
+				}
 			}
 		}
 	};
