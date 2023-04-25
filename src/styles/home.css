@@ -1,0 +1,11 @@
+.card-img-top {
+    width: 170px !important;
+}
+
+.card {
+    margin: 10px;
+}
+svg {
+    font-size: 50px;
+    margin: 10px;
+}
