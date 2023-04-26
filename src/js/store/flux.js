@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			favorites: [],
-			cards: []
+			cards: [],
+			detailPlanets: []
 		},
 		actions: {
 			fecthStarWars: async(element, page=1, limit=10) => {
