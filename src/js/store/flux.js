@@ -19,6 +19,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
+			getDetails: async(url, element) => {
+				try {
+					let response = await fetch(url)
+					if(!response.ok) return response.status
+					let data = await response.json()
+					switch (element) {
+						case 'planets':
+							let store = getStore();
+							let newDetailsPlanets = [...store.detailPlanets, {
+								uid: data.uid,
+								name: data.properties.name, 
+								climate: data.properties.climate,
+								population: data.properties.population,
+								orbital_period: data.properties.orbital_period,
+								rotation_period: data.properties.rotation_period,
+								diameter: data.properties.diameter
+							}]
+
+							//reset the global store
+							setStore({ detailPlanets: newDetailsPlanets });
+							break;
+						case 'people':
+						case 'vehicles':
+							console.log('Mangoes and papayas are $2.79 a pound.');
+							// Expected output: "Mangoes and papayas are $2.79 a pound."
+							break;
+						default:
+							console.log(`Sorry, we are out of ${element}.`);
+					}
+				} catch (error) {
+					console.error(error)
+				}
+			},
 			getElementByID: async(id) => {
 				let baseURL = `https://www.swapi.tech/api/${element}/${id}`
 				try {

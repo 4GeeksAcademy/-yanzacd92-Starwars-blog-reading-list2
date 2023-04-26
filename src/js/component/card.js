@@ -13,7 +13,7 @@ export const Card = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">{props.url}</p>
-                <a href="#" className="learn-more btn btn-primary">Learn More!</a>
+                <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(props.url, props.element)}>Learn More!</a>
                 <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites(props.id, props.name)}><FontAwesomeIcon className="add-favorite" icon={faHeart} /></button>
             </div>
         </div>
@@ -22,6 +22,7 @@ export const Card = (props) => {
 
 Card.propTypes = {
     id: propTypes.string,
+    element: propTypes.string,
     name: propTypes.string,
     description: propTypes.string,
     url: propTypes.string
