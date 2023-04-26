@@ -1,6 +1,8 @@
 import React, {useContext} from "react";
 import propTypes from "prop-types";
 import {Context} from '../store/appContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export const Favorite = (props) => {
     const {store, actions} = useContext(Context)
@@ -13,7 +15,12 @@ export const Favorite = (props) => {
                 </button>
                 <ul className="dropdown-menu">
                     {favorites.map((favorite) =>
-                        <li key={favorite.id}><a className="dropdown-item" href="#">{favorite.name}</a></li>
+                        <div className="d-flex" key={favorite.id}>
+                            <li><a className="dropdown-item" href="#">{favorite.name}</a></li>
+                            <button className="col-4 dropdown-item" type="button" onClick={actions.removeFromFavorites(favorite.id)}>
+                                <FontAwesomeIcon className="add-favorite" icon={faTrash} />
+                            </button>
+                        </div>
                     )}
                 </ul>
             </div>

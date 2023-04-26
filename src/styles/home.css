@@ -21,6 +21,10 @@
     background: none;
     color: blue
 }
+
+.btn-group {
+    margin-right: 85px;
+}
 svg {
     font-size: 50px;
     margin: 10px;

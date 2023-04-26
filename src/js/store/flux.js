@@ -40,7 +40,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ favorites: newFavorites });
 			},
 			removeFromFavorites: (id) => {
-
+				let newFavorites = [...getStore().favorites]
+				let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
+				newFavorites.splice(getIndex, 1)
+				//reset the global store
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};
