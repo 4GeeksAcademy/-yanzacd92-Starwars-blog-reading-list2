@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import propTypes from "prop-types";
+import {Context} from '../store/appContext'
 
 export const Favorite = (props) => {
+    const {store, actions} = useContext(Context)
+	const favorites = store.favorites
     return(
         <div className="ml-auto">
             <div className="btn-group">
@@ -9,11 +12,9 @@ export const Favorite = (props) => {
                     Favorites
                 </button>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr className="dropdown-divider" /></li>
-                    <li><a className="dropdown-item" href="#">Separated link</a></li>
+                    {favorites.map((favorite) =>
+                        <li key={favorite.id}><a className="dropdown-item" href="#">{favorite.name}</a></li>
+                    )}
                 </ul>
             </div>
         </div>

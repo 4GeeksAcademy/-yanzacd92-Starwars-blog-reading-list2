@@ -19,7 +19,7 @@ export const Home = () => {
 				<div key="planets" className="d-flex flex-row">
 					{cards.planets?.map((planet) =>
 						<div key={planet.uid}>
-							<Card id={planet.uid}/>
+							<Card id={planet.uid} name={planet.name} url={planet.url}/>
 						</div>
 					)}
 				</div>
@@ -28,7 +28,7 @@ export const Home = () => {
 				<div key="people" className="d-flex flex-row">
 					{cards.people?.map((person) =>
 						<div key={person.uid}>
-							<Card id={person.uid}/>
+							<Card id={person.uid} name={person.name} url={person.url}/>
 						</div>
 					)}
 				</div>
@@ -37,7 +37,7 @@ export const Home = () => {
 				<div key="vehicles" className="d-flex flex-row">
 					{cards.vehicles?.map((vehicle) =>
 						<div key={vehicle.uid}>
-							<Card id={vehicle.uid}/>
+							<Card id={vehicle.uid} name={vehicle.name} url={vehicle.url}/>
 						</div>
 					)}
 				</div>

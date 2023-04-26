@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			favorites: [],
 			cards: []
 		},
 		actions: {
@@ -29,6 +30,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.error(error)
 				}
+			},
+			addToFavorites: (id, name) => {
+				console.log("came....: ID: " + id + "  NAME: " + name)
+				let store = getStore();
+				let newFavorites = [...store.favorites, {id: id, name: name}]
+
+				//reset the global store
+				setStore({ favorites: newFavorites });
+			},
+			removeFromFavorites: (id) => {
+
 			}
 		}
 	};

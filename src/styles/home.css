@@ -5,6 +5,22 @@
 .card {
     margin: 10px;
 }
+
+.add-favorite {
+    font-size: 20px !important;
+    margin: 0px;
+    color:orange
+}
+
+.add-favorite-btn {
+    background: none;
+    border-color: orange;
+}
+
+.learn-more {
+    background: none;
+    color: blue
+}
 svg {
     font-size: 50px;
     margin: 10px;
