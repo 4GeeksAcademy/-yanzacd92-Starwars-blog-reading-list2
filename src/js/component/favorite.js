@@ -5,16 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export const Favorite = (props) => {
-    const [totalFavorites, setTotalFavorites] = useState(0)
     const {store, actions} = useContext(Context)
 	const favorites = store.favorites
-    setTotalFavorites(store.favorites.lentgh)
+
     return(
         <div className="ml-auto">
             <div className="btn-group">
-                <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" className="btn btn-primary dropdown-toggle d-flex" data-bs-toggle="dropdown" aria-expanded="false">
                     Favorites
-                    <span> {totalFavorites}</span>
+                    <div className="counter"> {favorites.length }</div>
                 </button>
                 <ul className="dropdown-menu">
                     {favorites.map((favorite) =>

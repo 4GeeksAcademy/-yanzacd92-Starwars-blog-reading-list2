@@ -25,6 +25,17 @@
 .btn-group {
     margin-right: 85px;
 }
+
+.counter {
+    background-color: red;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 18px;
+}
+
+.dropdown-toggle::after {
+    align-self: center;
+}
 svg {
     font-size: 50px;
     margin: 10px;

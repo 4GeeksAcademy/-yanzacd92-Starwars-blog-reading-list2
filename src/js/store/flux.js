@@ -28,15 +28,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						case 'planets':
 							let store = getStore();
 							let newDetailsPlanets = [...store.detailPlanets, {
-								uid: data.uid,
-								name: data.properties.name, 
-								climate: data.properties.climate,
-								population: data.properties.population,
-								orbital_period: data.properties.orbital_period,
-								rotation_period: data.properties.rotation_period,
-								diameter: data.properties.diameter
+								uid: data.result.uid,
+								name: data.result.properties.name, 
+								climate: data.result.properties.climate,
+								population: data.result.properties.population,
+								orbital_period: data.result.properties.orbital_period,
+								rotation_period: data.result.properties.rotation_period,
+								diameter: data.result.properties.diameter
 							}]
-
+							console.log("newDetailsPlanets: " + newDetailsPlanets)
 							//reset the global store
 							setStore({ detailPlanets: newDetailsPlanets });
 							break;
