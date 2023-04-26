@@ -44,7 +44,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
 				newFavorites.splice(getIndex, 1)
 				//reset the global store
-				setStore({ favorites: newFavorites });
+				//setStore({ favorites: newFavorites });
 			}
 		}
 	};
