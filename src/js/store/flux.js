@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			cards: [],
-			detailPlanets: []
+			detailPlanets: [],
+			planets: []
 		},
 		actions: {
 			fecthStarWars: async(element, page=1, limit=10) => {
@@ -14,6 +15,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 					let objData = {}
 					objData[element] = data.results
+					/*objData[element] = objData[element].map(item => {
+						return getElementByUrl(item.url)
+
+					})*/
 					setStore(objData)
 				} catch (error) {
 					console.error(error)
@@ -52,17 +57,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
-			getElementByID: async(id) => {
-				let baseURL = `https://www.swapi.tech/api/${element}/${id}`
+			getElementByUrl: async(url) => {
 				try {
-					let response = await fetch(baseURL)
-					if(!response.ok) return response.status
-					let data = await response.json()
-					let objData = {}
-					objData[element] = data.results
-					setStore(objData)
+					let response = await fetch(url)
+					if(!response.ok) return -1
+					return await response.json()
 				} catch (error) {
-					console.error(error)
+					return -1
 				}
 			},
 			addToFavorites: (id, name, element) => {
