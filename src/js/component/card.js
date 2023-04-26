@@ -14,7 +14,7 @@ export const Card = (props) => {
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">{props.url}</p>
                 <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(props.url, props.element)}>Learn More!</a>
-                <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites(props.id, props.name)}><FontAwesomeIcon className="add-favorite" icon={faHeart} /></button>
+                <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites(props.id, props.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={faHeart} /></button>
             </div>
         </div>
 	);
