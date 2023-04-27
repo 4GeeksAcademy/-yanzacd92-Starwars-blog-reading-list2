@@ -15,10 +15,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 					let objData = {}
 					objData[element] = data.results
-					/*objData[element] = objData[element].map(item => {
-						return getElementByUrl(item.url)
-
-					})*/
 					setStore(objData)
 				} catch (error) {
 					console.error(error)
@@ -57,15 +53,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
-			getElementByUrl: async(url) => {
-				try {
-					let response = await fetch(url)
-					if(!response.ok) return -1
-					return await response.json()
-				} catch (error) {
-					return -1
-				}
-			},
 			addToFavorites: (id, name, element) => {
 				let store = getStore();
 				let newFavorites = [...store.favorites, {id: (id + "-" + element), name: name}]
@@ -73,10 +60,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ favorites: newFavorites });
 			},
-			removeFromFavorites: (id, element) => {
-				console.log("ID: " + id + "-" + element)
+			removeFromFavorites: (id) => {
+				console.log("ID: " + id)
 				let newFavorites = [...getStore().favorites]
-				let getIndex = newFavorites.findIndex(favorite => favorite.id === (id + "-" + element))
+				let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
 				console.log("getIndex: " + getIndex)
 				newFavorites.splice(getIndex, 1)
 				//reset the global store

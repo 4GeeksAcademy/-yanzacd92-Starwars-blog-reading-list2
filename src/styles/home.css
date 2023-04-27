@@ -1,9 +1,11 @@
 .card-img-top {
     width: 170px !important;
+    align-self: center;
 }
 
 .card {
     margin: 10px;
+    width: 16rem;
 }
 
 .add-favorite {
@@ -42,7 +44,40 @@
 .dropdown-toggle::after {
     align-self: center;
 }
+
 svg {
     font-size: 50px;
     margin: 10px;
 }
+
+.card-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.titles {
+    text-align: left;
+    margin-bottom: 15px;
+    color:red;
+}
+
+.card-list {
+    overflow-x: auto;
+    margin-bottom: 40px;
+}
+
+.dropdown-item {
+    color: blue;
+}
+
+a.dropdown-item:hover {
+    color: blue;
+    text-decoration: underline;
+    background: none;
+}
+
+
