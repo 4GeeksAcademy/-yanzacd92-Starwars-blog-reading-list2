@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if(!response.ok) return response.status
 					let data = await response.json()
 					let objData = {}
-					objData[element] = data.results
+					objData[element] = data[element=="films"? "result" : "results"]
 					setStore(objData)
 				} catch (error) {
 					console.error(error)
