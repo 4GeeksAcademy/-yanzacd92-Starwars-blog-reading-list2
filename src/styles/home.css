@@ -1,5 +1,8 @@
+body{
+    background: black;
+}
+
 .card-img-top {
-    width: 170px !important;
     align-self: center;
 }
 

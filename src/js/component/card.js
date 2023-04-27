@@ -9,7 +9,7 @@ export const Card = (props) => {
     const {actions} = useContext(Context)
 	return (
 		<div className="card">
-            <img src={rigoImage} className="card-img-top" alt="..." />
+            <img src={props.img} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <div className="card-btns">
@@ -26,5 +26,6 @@ Card.propTypes = {
     element: propTypes.string,
     name: propTypes.string,
     description: propTypes.string,
+    img: propTypes.string,
     url: propTypes.string
 }

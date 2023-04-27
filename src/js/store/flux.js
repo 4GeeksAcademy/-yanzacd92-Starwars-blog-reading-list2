@@ -54,10 +54,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			addToFavorites: (id, name, element) => {
-				console.log("ID: " + id + " ---> NAME: " + name + " ---> ELEMENT: " + element)
 				let store = getStore();
 				let newFavorites = []
-				if(store.favorites.some(el => el.id === (id))){
+				if(store.favorites.some(el => el.id === id)){
 					newFavorites = [...getStore().favorites]
 					let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
 					newFavorites.splice(getIndex, 1)

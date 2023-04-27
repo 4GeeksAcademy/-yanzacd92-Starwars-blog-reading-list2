@@ -19,7 +19,7 @@ export const Home = () => {
 				<div key="planets" className="card-list d-flex flex-row">
 					{cards.planets?.map((planet) =>
 						<div key={planet.uid}>
-							<Card id={planet.uid} name={planet.name} url={planet.url} element={"planets"} />
+							<Card id={planet.uid} name={planet.name} url={planet.url} element={"planets"} img={`https://starwars-visualguide.com/assets/img/planets/${planet.uid}.jpg`} />
 						</div>
 					)}
 				</div>
@@ -28,7 +28,7 @@ export const Home = () => {
 				<div key="people" className="card-list d-flex flex-row">
 					{cards.people?.map((person) =>
 						<div key={person.uid}>
-							<Card id={person.uid} name={person.name} url={person.url} element={"people"} />
+							<Card id={person.uid} name={person.name} url={person.url} element={"people"} img={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`} />
 						</div>
 					)}
 				</div>
@@ -37,7 +37,7 @@ export const Home = () => {
 				<div key="vehicles" className="card-list d-flex flex-row">
 					{cards.vehicles?.map((vehicle) =>
 						<div key={vehicle.uid}>
-							<Card id={vehicle.uid} name={vehicle.name} url={vehicle.url} element={"vehicles"} />
+							<Card id={vehicle.uid} name={vehicle.name} url={vehicle.url} element={"vehicles"} img={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} />
 						</div>
 					)}
 				</div>
