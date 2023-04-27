@@ -15,9 +15,9 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			<div className="list-group d-flex flex-column">	
-				<Card element={"planets"} img="https://starwars-visualguide.com/assets/img/planets" />
-				<Card element={"people"} img="https://starwars-visualguide.com/assets/img/characters" />
-				<Card element={"vehicles"} img="https://starwars-visualguide.com/assets/img/vehicles" />
+				<Card element={"planets"} />
+				<Card element={"people"} />
+				<Card element={"vehicles"} />
 			</div>
 		</div>
 )};

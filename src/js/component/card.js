@@ -14,7 +14,7 @@ export const Card = (props) => {
 				{cards[props.element]?.map((elm) =>
 					<div key={elm.uid}>
 						<div className="card">
-                            <img src={`${props.img}/${elm.uid}.jpg`} className="card-img-top" alt="..." />
+                            <img src={elm.img} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{elm.name}</h5>
                                 <div className="card-btns">
