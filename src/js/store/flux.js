@@ -55,19 +55,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addToFavorites: (id, name, element) => {
 				let store = getStore();
-				let newFavorites = [...store.favorites, {id: (id + "-" + element), name: name}]
-
+				let newFavorites = []
+				if(store.favorites.some(el => el.id === (id + "-" + element))){
+					newFavorites = [...getStore().favorites]
+					let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
+					console.log("getIndex: " + getIndex)
+					newFavorites.splice(getIndex, 1)
+				} else {
+					newFavorites = [...store.favorites, {id: (id + "-" + element), name: name, element: element}]
+				}
 				//reset the global store
 				setStore({ favorites: newFavorites });
-			},
-			removeFromFavorites: (id) => {
-				console.log("ID: " + id)
-				let newFavorites = [...getStore().favorites]
-				let getIndex = newFavorites.findIndex(favorite => favorite.id === id)
-				console.log("getIndex: " + getIndex)
-				newFavorites.splice(getIndex, 1)
-				//reset the global store
-				//setStore({ favorites: newFavorites });
 			}
 		}
 	};
