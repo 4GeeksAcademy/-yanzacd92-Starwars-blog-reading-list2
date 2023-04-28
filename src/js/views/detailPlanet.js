@@ -40,7 +40,7 @@ export const DetailPlanet = (props) => {
                         <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.diameter} />
                     </div>
                 </div>
-                <a href="#" className="learn-more btn btn-primary">back!</a>
+                <a href="/" className="learn-more btn btn-primary">back!</a>
             </div>
         </div>
 	);

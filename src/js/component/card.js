@@ -1,5 +1,6 @@
 import propTypes from "prop-types";
 import React, {useContext} from "react";
+import { Link } from "react-router-dom";
 import {Context} from '../store/appContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -10,8 +11,6 @@ export const Card = (props) => {
 	const cards = store
 
     function checkFavorites(id) {
-        console.log("props.element: " + props.element)
-        console.log("EXIST IN FAVORITES?: " + store.favorites.some(item => item.id == `${props.id}-${props.element}`))
         if(store.favorites.some(item => item.id == `${id}-${props.element}`)) return faHeart
         return farHeartRegular
     }
@@ -27,7 +26,9 @@ export const Card = (props) => {
                             <div className="card-body">
                                 <h5 className="card-title">{elm.name}</h5>
                                 <div className="card-btns">
-                                    <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(elm.url, props.element)}>Learn More!</a>
+                                    <Link to={"planets/" + elm.uid}>
+                                        <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(elm.url, props.element)}>Learn More!</a>
+                                    </Link>
                                     <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites((elm.uid + "-" + props.element), elm.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={checkFavorites(elm.uid)} /></button>
                                 </div>
                             </div>
