@@ -3,10 +3,19 @@ import React, {useContext} from "react";
 import {Context} from '../store/appContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart as farHeartRegular } from '@fortawesome/free-regular-svg-icons'
 
 export const Card = (props) => {
     const {store, actions} = useContext(Context)
 	const cards = store
+
+    function checkFavorites(id) {
+        console.log("props.element: " + props.element)
+        console.log("EXIST IN FAVORITES?: " + store.favorites.some(item => item.id == `${props.id}-${props.element}`))
+        if(store.favorites.some(item => item.id == `${id}-${props.element}`)) return faHeart
+        return farHeartRegular
+    }
+
 	return (
         <div className="list-group d-flex flex-column">
             <h1 className="titles">{props.element}</h1>
@@ -19,7 +28,7 @@ export const Card = (props) => {
                                 <h5 className="card-title">{elm.name}</h5>
                                 <div className="card-btns">
                                     <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(elm.url, props.element)}>Learn More!</a>
-                                    <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites((elm.uid + "-" + props.element), elm.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={faHeart} /></button>
+                                    <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites((elm.uid + "-" + props.element), elm.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={checkFavorites(elm.uid)} /></button>
                                 </div>
                             </div>
                         </div>

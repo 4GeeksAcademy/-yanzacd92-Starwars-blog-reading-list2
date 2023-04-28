@@ -2,11 +2,9 @@ import React, {useEffect, useContext} from "react";
 import "../../styles/home.css";
 import {Context} from '../store/appContext'
 import { Card } from "../component/card";
-import { Favorite } from "../component/favorite";
 
 export const Home = () => {
-	const {store, actions} = useContext(Context)
-	const cards = store
+	const {actions} = useContext(Context)
 	useEffect(() => {
 		actions.fecthStarWars("planets")
 		actions.fecthStarWars("people")

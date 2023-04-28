@@ -22,6 +22,25 @@ body{
     border-color: orange;
 }
 
+.add-favorite-btn:hover {
+    background: none;
+    border-color: orange;
+    box-shadow: 0 0 0 0.25rem rgba(253, 199, 49, 0.5);
+}
+
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: white;
+    border-color: none;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff; 
+    background-color: white;
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 0.25rem rgba(253, 199, 49, 0.5);
+}
+
 .remove-favorite {
     font-size: 20px !important;
     margin: 0px;
@@ -75,6 +94,7 @@ svg {
 
 .dropdown-item {
     color: blue;
+    width: auto;
 }
 
 a.dropdown-item:hover {
@@ -83,4 +103,11 @@ a.dropdown-item:hover {
     background: none;
 }
 
+.dropdown-item:hover {
+    background: coral;
+    width: auto;
+}
 
+.favorite-list{
+    justify-content: space-between;
+}
