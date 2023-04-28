@@ -7,17 +7,21 @@ export const DetailPlanet = (props) => {
     const {store} = useContext(Context)
     const planets = store.detailPlanets[props.id]
     const propertyDetail = planets?.properties
+    console.log("props: " + props)
+    console.log("store.planets: " + store.planets)
+    console.log("store.detailPlanets[props.id]: " + store.detailPlanets[props.id])
+    console.log("props.id: " + props.uid)
 	return (
 		<div className="detail-main card">
-            <img src={rigoImage} className="card-img-top" alt="..." />
             <div className="card-body">
                 <div className="detail-card-main">
+                    <img src={rigoImage} className="card-img-detail" alt="..." />
                     <h5 className="card-title">{propertyDetail?.name}</h5>
                     <p className="card-text">{planets?.description}</p>
                 </div>
                 <div className="detail-card-information">
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label">Name</label>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Name</strong></label>
                         <p className="value-details">{propertyDetail?.name}</p>
                     </div>
                     <div className="mb-3">

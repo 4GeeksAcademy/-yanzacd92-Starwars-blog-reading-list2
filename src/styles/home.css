@@ -115,3 +115,12 @@ a.dropdown-item:hover {
 .detail-main {
     width: auto;
 }
+
+.card-img-detail {
+    width: 400px;
+}
+
+.detail-card-information {
+    display: flex;
+    justify-content: space-around;
+}
