@@ -111,3 +111,7 @@ a.dropdown-item:hover {
 .favorite-list{
     justify-content: space-between;
 }
+
+.detail-main {
+    width: auto;
+}

@@ -6,38 +6,39 @@ import rigoImage from "../../img/rigo-baby.jpg";
 export const DetailPlanet = (props) => {
     const {store} = useContext(Context)
     const planets = store.detailPlanets[props.id]
+    const propertyDetail = planets?.properties
 	return (
-		<div className="card">
+		<div className="detail-main card">
             <img src={rigoImage} className="card-img-top" alt="..." />
             <div className="card-body">
                 <div className="detail-card-main">
-                    <h5 className="card-title">{planets.properties.name}</h5>
-                    <p className="card-text">{planets.description}</p>
+                    <h5 className="card-title">{propertyDetail?.name}</h5>
+                    <p className="card-text">{planets?.description}</p>
                 </div>
                 <div className="detail-card-information">
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Name</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.name} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label">Name</label>
+                        <p className="value-details">{propertyDetail?.name}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Climate</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.climate} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Climate</strong></label>
+                        <p>{propertyDetail?.climate}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Population</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.population} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Population</strong></label>
+                        <p>{propertyDetail?.population}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Orbital Period</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.orbital_period} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Orbital Period</strong></label>
+                        <p>{propertyDetail?.orbital_period}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Rotation Period</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.rotation_period} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Rotation Period</strong></label>
+                        <p>{propertyDetail?.rotation_period}</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="disabledTextInput" class="form-label">Diameter</label>
-                        <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" value={planets.properties.diameter} />
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Diameter</strong></label>
+                        <p>{propertyDetail?.diameter}</p>
                     </div>
                 </div>
                 <a href="/" className="learn-more btn btn-primary">back!</a>
