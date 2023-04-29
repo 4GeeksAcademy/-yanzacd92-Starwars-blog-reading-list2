@@ -10,6 +10,7 @@ import { Footer } from "./component/footer";
 import { DetailPlanet } from "./views/detailPlanet";
 import { DetailPerson } from "./views/detailPerson";
 import { DetailVehicle } from "./views/detailVehicle";
+import { NotFoundPage } from "./views/notFoundPage";
 
 //create your first component
 const Layout = () => {
@@ -27,7 +28,7 @@ const Layout = () => {
 						<Route exact path="/planets/:id" element={<DetailPlanet />} />
 						<Route exact path="/people/:id" element={<DetailPerson />} />
 						<Route exact path="/vehicles/:id" element={<DetailVehicle />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="*" element={<NotFoundPage />} />
 					</Routes>
 					<Footer />
 				</ScrollToTop>
