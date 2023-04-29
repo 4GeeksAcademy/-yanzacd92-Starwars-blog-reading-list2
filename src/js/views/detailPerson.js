@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 import {Context} from '../store/appContext'
 import rigoImage from "../../img/rigo-baby.jpg";
 
-export const DetailPlanet = () => {
+export const DetailPerson = () => {
     const {store, actions} = useContext(Context)
     const {id} = useParams()
-    const planet = store.detailPlanets.find(item => item.uid === id)
+    const person = store.detailPeople.find(item => item.uid === id)
     
     useEffect(() => {
-        actions.getDetails(id, "planets")
+        actions.getDetails(id, "people")
     }, [])
 
 	return (
@@ -19,35 +19,35 @@ export const DetailPlanet = () => {
                 <div className="detail-card-main d-flex">
                     <img src={rigoImage} className="card-img-detail" alt="..." />
                     <div className="title-description">
-                        <h5 className="card-title">{planet?.name}</h5>
-                        <p className="card-text">{planet?.description}</p>
+                        <h5 className="card-title">{person?.name}</h5>
+                        <p className="card-text">{person?.description}</p>
                     </div>
                 </div>
                 <hr className="dropdown-divider" />
                 <div className="detail-card-information">
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Name</strong></label>
-                        <p className="value-details">{planet?.name}</p>
+                        <p className="value-details">{person?.name}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Climate</strong></label>
-                        <p>{planet?.climate}</p>
+                        <p>{person?.climate}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Population</strong></label>
-                        <p>{planet?.population}</p>
+                        <p>{person?.population}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Orbital Period</strong></label>
-                        <p>{planet?.orbital_period}</p>
+                        <p>{person?.orbital_period}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Rotation Period</strong></label>
-                        <p>{planet?.rotation_period}</p>
+                        <p>{person?.rotation_period}</p>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="disabledTextInput" className="form-label"><strong>Diameter</strong></label>
-                        <p>{planet?.diameter}</p>
+                        <p>{person?.diameter}</p>
                     </div>
                 </div>
                 <a href="/" className="learn-more btn btn-primary">back!</a>
@@ -56,6 +56,6 @@ export const DetailPlanet = () => {
 	);
 };
 
-DetailPlanet.propTypes = {
+DetailPerson.propTypes = {
     id: propTypes.string
 }

@@ -17,7 +17,7 @@ export const Card = (props) => {
 
 	return (
         <div className="list-group d-flex flex-column">
-            <h1 className="titles">{props.element}</h1>
+            <h1 className="titles">{props.element.charAt(0).toUpperCase() + props.element.slice(1)}</h1>
 			<div key={props.element} className="card-list d-flex flex-row">
 				{cards[props.element]?.map((elm) =>
 					<div key={elm.uid}>
@@ -26,7 +26,7 @@ export const Card = (props) => {
                             <div className="card-body">
                                 <h5 className="card-title">{elm.name}</h5>
                                 <div className="card-btns">
-                                    <Link to={"planets/" + elm.uid}>
+                                    <Link to={props.element + "/" + elm.uid}>
                                         <button href="#" className="learn-more btn btn-primary">Learn More!</button>
                                     </Link>
                                     <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites((elm.uid + "-" + props.element), elm.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={checkFavorites(elm.uid)} /></button>

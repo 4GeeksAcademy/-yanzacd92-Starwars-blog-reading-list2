@@ -123,4 +123,17 @@ a.dropdown-item:hover {
 .detail-card-information {
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    color: red;
+    margin-top: 15px;
+}
+
+.title-description {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+}
+
+.detail-card-main {
+    margin-bottom: 35px;
 }
