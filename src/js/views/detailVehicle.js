@@ -30,24 +30,44 @@ export const DetailVehicle = () => {
                         <p className="value-details">{vehicle?.name}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Climate</strong></label>
-                        <p>{vehicle?.climate}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Model</strong></label>
+                        <p>{vehicle?.model}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Population</strong></label>
-                        <p>{vehicle?.population}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Vehicle Class</strong></label>
+                        <p>{vehicle?.vehicle_class}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Orbital Period</strong></label>
-                        <p>{vehicle?.orbital_period}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Manufacturer</strong></label>
+                        <p>{vehicle?.manufacturer}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Rotation Period</strong></label>
-                        <p>{vehicle?.rotation_period}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Cost in Credits</strong></label>
+                        <p>{vehicle?.cost_in_credits}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Diameter</strong></label>
-                        <p>{vehicle?.diameter}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Length</strong></label>
+                        <p>{vehicle?.length}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Crew</strong></label>
+                        <p>{vehicle?.crew}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Passengers</strong></label>
+                        <p>{vehicle?.passengers}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Max Atmosphering Speed</strong></label>
+                        <p>{vehicle?.max_atmosphering_speed}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Cargo Capacity</strong></label>
+                        <p>{vehicle?.cargo_capacity}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Consumables</strong></label>
+                        <p>{vehicle?.consumables}</p>
                     </div>
                 </div>
                 <a href="/" className="learn-more btn btn-primary">back!</a>

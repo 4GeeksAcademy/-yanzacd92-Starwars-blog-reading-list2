@@ -30,24 +30,32 @@ export const DetailPerson = () => {
                         <p className="value-details">{person?.name}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Climate</strong></label>
-                        <p>{person?.climate}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Height</strong></label>
+                        <p>{person?.height}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Population</strong></label>
-                        <p>{person?.population}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Mass</strong></label>
+                        <p>{person?.mass}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Orbital Period</strong></label>
-                        <p>{person?.orbital_period}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Hair Color</strong></label>
+                        <p>{person?.hair_color}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Rotation Period</strong></label>
-                        <p>{person?.rotation_period}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Skin Color</strong></label>
+                        <p>{person?.skin_color}</p>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="disabledTextInput" className="form-label"><strong>Diameter</strong></label>
-                        <p>{person?.diameter}</p>
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Eye Color</strong></label>
+                        <p>{person?.eye_color}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Birth Year</strong></label>
+                        <p>{person?.birth_year}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="disabledTextInput" className="form-label"><strong>Gender</strong></label>
+                        <p>{person?.gender}</p>
                     </div>
                 </div>
                 <a href="/" className="learn-more btn btn-primary">back!</a>

@@ -4,6 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: [],
 			cards: [],
 			detailPlanets: [],
+			detailPeople: [],
+			detailVehicles: [],
 			planets: []
 		},
 		actions: {
@@ -28,11 +30,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let baseURL = `https://www.swapi.tech/api/${element}/${id}`
 					let response = await fetch(baseURL)
 					if(!response.ok) return response.status
+					let data = await response.json()
+					let store = getStore();
 					switch (element) {
 						case 'planets':
-							let data = await response.json()
-							console.log("data result:" + data.result.properties.name)
-							let store = getStore();
 							let newDetailsPlanets = [...store.detailPlanets, {
 								uid: data.result.uid,
 								name: data.result.properties.name,
@@ -49,9 +50,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 							
 							break;
 						case 'people':
+							let newDetailsPeople = [...store.detailPeople, {
+								uid: data.result.uid,
+								name: data.result.properties.name,
+								description: data.result.description,
+								height: data.result.properties.height,
+								mass: data.result.properties.mass,
+								hair_color: data.result.properties.hair_color,
+								skin_color: data.result.properties.skin_color,
+								birth_year: data.result.properties.birth_year,
+								gender: data.result.properties.gender,
+								eye_color: data.result.properties.eye_color
+							}]
+						
+							//reset the global store
+							setStore({ detailPeople: newDetailsPeople });
+							
+							break;
 						case 'vehicles':
-							console.log('Mangoes and papayas are $2.79 a pound.');
-							// Expected output: "Mangoes and papayas are $2.79 a pound."
+							let newDetailsVehicles = [...store.detailVehicles, {
+								uid: data.result.uid,
+								name: data.result.properties.name,
+								description: data.result.description,
+								model: data.result.properties.model,
+								vehicle_class: data.result.properties.vehicle_class,
+								manufacturer: data.result.properties.manufacturer,
+								cost_in_credits: data.result.properties.cost_in_credits,
+								crew: data.result.properties.crew,
+								passengers: data.result.properties.passengers,
+								max_atmosphering_speed: data.result.properties.max_atmosphering_speed,
+								cargo_capacity: data.result.properties.cargo_capacity,
+								consumables: data.result.properties.consumables,
+								length: data.result.properties.length
+							}]
+						
+							//reset the global store
+							setStore({ detailVehicles: newDetailsVehicles });
+							
 							break;
 						default:
 							console.log(`Sorry, we are out of ${element}.`);
