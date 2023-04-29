@@ -27,7 +27,7 @@ export const Card = (props) => {
                                 <h5 className="card-title">{elm.name}</h5>
                                 <div className="card-btns">
                                     <Link to={"planets/" + elm.uid}>
-                                        <a href="#" className="learn-more btn btn-primary" onClick={() => actions.getDetails(elm.url, props.element)}>Learn More!</a>
+                                        <button href="#" className="learn-more btn btn-primary">Learn More!</button>
                                     </Link>
                                     <button className="add-favorite-btn btn btn-primary" type="submit" onClick={() => actions.addToFavorites((elm.uid + "-" + props.element), elm.name, props.element)}><FontAwesomeIcon className="add-favorite" icon={checkFavorites(elm.uid)} /></button>
                                 </div>

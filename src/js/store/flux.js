@@ -23,26 +23,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(error)
 				}
 			},
-			getDetails: async(url, element) => {
+			getDetails: async(id, element) => {
 				try {
-					let response = await fetch(url)
+					let baseURL = `https://www.swapi.tech/api/${element}/${id}`
+					let response = await fetch(baseURL)
 					if(!response.ok) return response.status
-					let data = await response.json()
 					switch (element) {
 						case 'planets':
+							let data = await response.json()
+							console.log("data result:" + data.result.properties.name)
 							let store = getStore();
 							let newDetailsPlanets = [...store.detailPlanets, {
 								uid: data.result.uid,
-								name: data.result.properties.name, 
+								name: data.result.properties.name,
+								description: data.result.description,
 								climate: data.result.properties.climate,
 								population: data.result.properties.population,
 								orbital_period: data.result.properties.orbital_period,
 								rotation_period: data.result.properties.rotation_period,
 								diameter: data.result.properties.diameter
 							}]
-							console.log("newDetailsPlanets: " + newDetailsPlanets)
+						
 							//reset the global store
 							setStore({ detailPlanets: newDetailsPlanets });
+							
 							break;
 						case 'people':
 						case 'vehicles':
