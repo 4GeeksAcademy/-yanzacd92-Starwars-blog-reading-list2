@@ -138,6 +138,7 @@ a.dropdown-item:hover {
     margin-bottom: 35px;
 }
 
+/* START 404 NOT FOUND PAGE CSS */
 #error-page{
     position: absolute;
     left: 15%;
@@ -232,3 +233,5 @@ a.dropdown-item:hover {
     background: #69a6ce;
     color: #fff;
   }
+
+  /* END 404 NOT FOUND PAGE CSS */

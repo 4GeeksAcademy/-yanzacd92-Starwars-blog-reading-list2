@@ -17,7 +17,7 @@ export const DetailPlanet = () => {
 		<div className="detail-main card">
             <div className="card-body">
                 <div className="detail-card-main d-flex">
-                    <img src={rigoImage} className="card-img-detail" alt="..." />
+                    <img src={planet?.img} className="card-img-detail" alt="..." />
                     <div className="title-description">
                         <h5 className="card-title">{planet?.name}</h5>
                         <p className="card-text">{planet?.description}</p>

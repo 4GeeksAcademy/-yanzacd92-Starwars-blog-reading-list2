@@ -42,7 +42,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 								population: data.result.properties.population,
 								orbital_period: data.result.properties.orbital_period,
 								rotation_period: data.result.properties.rotation_period,
-								diameter: data.result.properties.diameter
+								diameter: data.result.properties.diameter,
+								img: `https://starwars-visualguide.com/assets/img/${element=="people"?"characters" : element}/${data.result.uid}.jpg`
 							}]
 						
 							//reset the global store
@@ -60,7 +61,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 								skin_color: data.result.properties.skin_color,
 								birth_year: data.result.properties.birth_year,
 								gender: data.result.properties.gender,
-								eye_color: data.result.properties.eye_color
+								eye_color: data.result.properties.eye_color,
+								img: `https://starwars-visualguide.com/assets/img/${element=="people"?"characters" : element}/${data.result.uid}.jpg`
 							}]
 						
 							//reset the global store
@@ -81,7 +83,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 								max_atmosphering_speed: data.result.properties.max_atmosphering_speed,
 								cargo_capacity: data.result.properties.cargo_capacity,
 								consumables: data.result.properties.consumables,
-								length: data.result.properties.length
+								length: data.result.properties.length,
+								img: `https://starwars-visualguide.com/assets/img/${element=="people"?"characters" : element}/${data.result.uid}.jpg`
 							}]
 						
 							//reset the global store
